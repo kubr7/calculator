@@ -1,0 +1,331 @@
+body {
+  background-image: linear-gradient(
+    to top,
+    #525ceb,
+    #6886f8,
+    #8badfe,
+    #b9d2ff,
+    #eef5ff
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  background-clip: padding-box;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Home */
+
+.home-body {
+  display: grid;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding: 4vmin;
+  width: 100%;
+  background-color: transparent;
+  color: #3a3535;
+}
+
+.title {
+  padding: 1em;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  font-family: "Prata", serif;
+  font-size: 8vw;
+  width: 100%;
+  z-index: 2;
+
+  /* start */
+}
+
+.title > .title-inner {
+  display: inline-block;
+}
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+/* @keyframes outer-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+} */
+
+@keyframes inner-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.cafe,
+.mozart {
+  animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.title-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both;
+}
+
+.cafe-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both,
+    text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.mozart-inner {
+  animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.title {
+  animation: outer-left 1s 1s ease both;
+}
+
+/* start */
+.cafe > .cafe-inner {
+  display: inline-block;
+}
+
+.mozart {
+  display: inline-block;
+}
+
+.image {
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: -2rem;
+  opacity: 0.7;
+  animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+}
+
+@keyframes image-in {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 50vh;
+}
+/* End Home CSS */
+
+.navbar-nav {
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.buttons button {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospaces;
+}
+
+.clear-hovered {
+  color: #0d6efd; /* Change this to your desired hover color */
+  background-color: #fff; /* Change this to your desired hover background color */
+}
+
+/* Sim-Cal */
+
+/* lineup class and keyframes */
+.headLine {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid #ebe7e7;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+/* .lineUp {
+  animation: 2s anim-lineUp infinite both;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+} */
+
+.resultBox {
+  height: 50vh;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column wrap;
+  background-image: linear-gradient(
+    to top,
+    #525ceb,
+    #6886f8,
+    #8badfe,
+    #b9d2ff,
+    #eef5ff
+  );
+}
+
+.resultStyle {
+  font-size: large;
+  font-weight: 600;
+}
+
+.answer-box {
+  display: flex;
+  align-items: center;
+}
+
+.waviy {
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: #000;
+  margin: 0 0 0 3px;
+  text-transform: uppercase;
+  animation: flip 4s linear infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+
+.error {
+  font-size: large;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Sim-Cal End CSS */
+
+.transparent-background {
+  background-color: transparent;
+  padding: 8px;
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent;
+}
+
+/* Adv-Cal */
+
+.calculator {
+  max-width: 400px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+    to top,
+    #525ceb,
+    #6886f8,
+    #8badfe,
+    #b9d2ff,
+    #eef5ff
+  );
+}
+
+.display {
+  height: 5rem;
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 1.5em;
+}
+
+.input-group-text {
+  background-color: transparent;
+}
+
+.expression {
+  color: #000;
+  width: auto;
+  height: auto;
+  padding: 0 5px;
+  font-size: medium;
+  word-break: break-all;
+}
+
+.result {
+  padding: 0 5px;
+  font-weight: bold;
+  font-size: medium;
+  border-bottom: 1px solid #f1ecec;
+}
+
+/* Adv-Cal End CSS */
+
+@media only screen and (max-width: 768px) {
+  .numTableBox {
+    min-width: 100%;
+  }
+
+  .resultBox span {
+    font-size: 12px;
+  }
+
+  .inputBox {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .calc > .input-group {
+    width: 25%;
+  }
+
+  .operations {
+    width: 50%;
+  }
+
+  .resultDisplay {
+    width: 75%;
+  }
+
+  .inputBox {
+    width: 25%;
+  }
+
+  .oprand > div {
+    width: 25%;
+  }
+}
